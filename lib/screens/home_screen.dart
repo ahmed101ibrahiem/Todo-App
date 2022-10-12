@@ -10,13 +10,13 @@ class HomeScreen extends StatelessWidget {
     final TodoController todoController = Get.put(TodoController());
     return Scaffold(
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
+        child:const Icon(Icons.add),
         onPressed: (){
           Get.to(()=>TodoScreen());
         },
       ),
       appBar: AppBar(
-        title:const Text('Getx Todo List'),
+        title:const Text('Get x Todo List'),
       ),
       body: Container(
         child: Obx(()=>ListView.separated(
@@ -42,7 +42,7 @@ class HomeScreen extends StatelessWidget {
                 title: Text(
                   todoController.todos[index].text,
                   style: (todoController.todos[index].done)?
-                  TextStyle(
+                  const TextStyle(
                     color: Colors.red,
                        decoration: TextDecoration.lineThrough
                   ) :
